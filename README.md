@@ -2,7 +2,8 @@
 
 MVP web para generar **secuencias / multitracks** orientadas a músicos en vivo (estilo flujo Moises.ai, pero enfocado en Ableton Live, Playback de MultiTracks.com o Prime).
 
-**Dueño:** Jhon Fuentes (Colombia) — estudiante de Ingeniería de Software.
+**Dueño:** Jhon Fuentes (Colombia) — estudiante de Ingeniería de Software.  
+**Repo:** [github.com/Jhon-Fuenwhv2024/mysecuenciaTrack](https://github.com/Jhon-Fuenwhv2024/mysecuenciaTrack)
 
 Interfaz y documentación en **español**.
 
