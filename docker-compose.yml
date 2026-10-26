@@ -1,0 +1,36 @@
+services:
+  api:
+    build: ./backend
+    ports:
+      - "8765:8000"
+    environment:
+      SEPARATION_BACKEND: ${SEPARATION_BACKEND:-demucs}
+      DEMUCS_MODEL: ${DEMUCS_MODEL:-htdemucs}
+      USE_GPU: ${USE_GPU:-false}
+      RETENTION_HOURS: ${RETENTION_HOURS:-24}
+      FREE_SONGS_PER_MONTH: "3"
+      DATA_DIR: /data
+      UPLOAD_DIR: /data/uploads
+      JOBS_DIR: /data/jobs
+      EXPORTS_DIR: /data/exports
+      DB_URL: sqlite+aiosqlite:////data/secuencialive.db
+    volumes:
+      - secuencialive-data:/data
+    # Para GPU (NVIDIA): descomenta y usa imagen CUDA + USE_GPU=true
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  web:
+    build: ./frontend
+    ports:
+      - "3847:80"
+    depends_on:
+      - api
+
+volumes:
+  secuencialive-data:
