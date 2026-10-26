@@ -2,6 +2,7 @@
 node_modules/
 dist/
 .venv/
+backend/.venv/
 venv/
 __pycache__/
 *.py[cod]
@@ -23,3 +24,5 @@ frontend/README.md
 *.egg-info/
 .coverage
 htmlcov/
+*.als
+!**/SecuenciaLive_plantilla.als
